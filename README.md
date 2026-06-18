@@ -44,8 +44,6 @@ ThemeShift/
 ├── README.md # This file
 ├── Dark-Light-Mode.zip # Project ZIP archive
 └── Screenshots/ # Light and dark mode screenshots
-├── light-mode.png
-└── dark-mode.png
 ```
 
 <br>
