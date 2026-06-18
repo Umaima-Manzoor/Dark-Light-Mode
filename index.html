@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dark/Light Mode Toggle with Local Storage">
+  <title>Theme Toggle Demo</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="#" class="logo">
+        <i class="fas fa-circle-half-stroke"></i> ThemeShift
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <!-- Advanced Animated Toggle Switch -->
+      <div class="theme-switch-wrapper">
+        <span class="theme-label" id="themeLabel">Light</span>
+        <button class="theme-switch" id="themeToggle" aria-label="Toggle dark mode" role="switch" aria-checked="false">
+          <span class="switch-track">
+            <span class="switch-thumb"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+      <div class="container hero-content">
+        <span class="hero-badge">Persistent User Preferences</span>
+        <h1 class="hero-title">Seamless <span class="text-accent">Dark & Light</span> Modes</h1>
+        <p class="hero-subtitle">Click the toggle in the navbar to switch themes. Your choice is automatically saved to Local Storage and will persist even after you close or refresh the browser.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary">Get Started</button>
+          <button class="btn btn-outline">Learn More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">Built with pure CSS variables and vanilla JavaScript for maximum performance.</p>
+        </div>
+        
+        <div class="features-grid">
+          <article class="card">
+            <div class="card-icon"><i class="fas fa-sun"></i></div>
+            <h3 class="card-title">Light Mode</h3>
+            <p class="card-text">Clean, bright interfaces optimized for daytime use and well-lit environments.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><i class="fas fa-moon"></i></div>
+            <h3 class="card-title">Dark Mode</h3>
+            <p class="card-text">Reduces eye strain in low-light conditions while saving battery on OLED screens.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><i class="fas fa-database"></i></div>
+            <h3 class="card-title">Local Storage</h3>
+            <p class="card-text">Your preference is saved directly in your browser, requiring no backend database.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon"><i class="fas fa-computer"></i></div>
+            <h3 class="card-title">System Detection</h3>
+            <p class="card-text">Automatically matches your operating system's theme if you haven't made a manual choice yet.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT / UI PREVIEW SECTION ========== -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-content">
+          <h2 class="section-title">Pixel-Perfect Transitions</h2>
+          <p class="about-text">Notice how every element on this page—backgrounds, text, cards, borders, and shadows—transitions smoothly without flashing or jumping. This is achieved using CSS custom properties (variables) mapped directly to the root element.</p>
+          
+          <div class="ui-preview-box">
+            <h4>UI Component Preview</h4>
+            <div class="preview-elements">
+              <button class="btn btn-primary btn-sm">Primary Action</button>
+              <button class="btn btn-outline btn-sm">Secondary Action</button>
+              <span class="preview-badge">Status Badge</span>
+            </div>
+            <div class="preview-input-group">
+              <input type="text" placeholder="Input field example..." class="preview-input">
+            </div>
+            <div class="preview-alert">
+              <i class="fas fa-circle-info"></i>
+              <span>This is an example alert box adapting to the current theme dynamically.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-code-block">
+          <div class="code-header">
+            <span class="code-dot red"></span>
+            <span class="code-dot yellow"></span>
+            <span class="code-dot green"></span>
+            <span class="code-filename">script.js</span>
+          </div>
+          <pre class="code-body"><code>// Check Local Storage on load
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme) {
+  document.documentElement.setAttribute(
+    'data-theme', savedTheme
+  );
+} else if (window.matchMedia(
+  '(prefers-color-scheme: dark)'
+).matches) {
+  setTheme('dark');
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2024 ThemeShift. Built for Task 4.</p>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
