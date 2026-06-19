@@ -37,7 +37,7 @@ A fully functional dark/light mode toggle system built with HTML, CSS (CSS varia
 
 ## 📁 Project Structure
 ```
-ThemeShift/
+Dark-Light-Mode/
 ├── index.html # Main HTML page
 ├── script.js # Theme toggle logic + localStorage
 ├── styles.css # Complete CSS with light/dark variables
